@@ -1,3 +1,4 @@
+import 'package:day_one/ulits/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'pages/login_page.dart';
@@ -16,12 +17,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
+      // Removing debug label from screen
+      debugShowCheckedModeBanner: false,
       home: LoginPage(),
       // Apps route
       routes: {
         // "/": (context) => HomePage(),
-        "/home": (context) => HomePage(),
-        "/Login": (context) => LoginPage()
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage()
       },
     );
   }
